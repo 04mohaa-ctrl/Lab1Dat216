@@ -1,8 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:lab1/pages/main_view.dart';
 
+import 'package:provider/provider.dart';
+import 'model/task_handler.dart';
+
+
+
 void main() {
-  runApp(const MyApp());
+   runApp(ChangeNotifierProvider(
+      create: (context) => TaskHandler(),
+      child: const MyApp(),
+   ));  
 }
 
 class MyApp extends StatelessWidget {
